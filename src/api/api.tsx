@@ -14,7 +14,6 @@ export async function getChampions() {
     const response = await axios.get(
       "https://ddragon.leagueoflegends.com/cdn/15.16.1/data/en_US/champion.json"
     );
-    console.log("console da api", response.data.data);
     return response.data.data;
   } catch (err) {
     throw err;
