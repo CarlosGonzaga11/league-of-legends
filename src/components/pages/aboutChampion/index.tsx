@@ -1,21 +1,19 @@
-import { Link, useParams } from "react-router-dom";
-import { useChampionsContext } from "../../../hooks/championContext";
+import { Link } from "react-router-dom";
 
+import { BsMagic } from "react-icons/bs";
+import { CiHeart, CiStar } from "react-icons/ci";
+import { GiLampreyMouth } from "react-icons/gi";
 import { IoIosArrowRoundBack } from "react-icons/io";
 import { LuSword } from "react-icons/lu";
 import { MdOutlineShield } from "react-icons/md";
-import { BsMagic } from "react-icons/bs";
-import { CiHeart } from "react-icons/ci";
-import { CiStar } from "react-icons/ci";
-import { GiLampreyMouth } from "react-icons/gi";
+import useChampions from "../champions/useChampions";
+
 export default function AboutChampion() {
-  const { champions, isLoading } = useChampionsContext();
-  const { id } = useParams();
+  const { id, isLoading, handleCreateUrlBackground, champion } = useChampions();
 
   if (!id) return <p>ID do campeão não fornecido</p>;
   if (isLoading) return <p>Carregando campeões...</p>;
 
-  const champion = champions.find((c) => c.id === id);
   if (!champion) return <p>Campeão não encontrado</p>;
 
   return (
@@ -23,7 +21,7 @@ export default function AboutChampion() {
       <section
         className="relative w-full min-h-screen flex items-start justify-start px-4  flex-col sm:gap-32 gap-36 bg-cover bg-center bg-no-repeat "
         style={{
-          backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champion.id}_0.jpg)`,
+          backgroundImage: `url(${handleCreateUrlBackground(champion.id)})`,
         }}
       >
         <div
