@@ -14,7 +14,6 @@ export default function Champions() {
   const [search, setSearch] = useState<string>();
   function searchChampions(event: React.ChangeEvent<HTMLInputElement>) {
     setSearch(event.target.value);
-    console.log(search);
   }
   function openFilter() {
     setFilterIsOpen(!filterIsOpen);
