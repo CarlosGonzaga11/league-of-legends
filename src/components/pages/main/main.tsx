@@ -8,25 +8,24 @@ export default function Main() {
     <div className="font-serif relative min-h-screen bg-[linear-gradient(135deg,_rgba(13,34,41,1)_12%,_rgba(105,104,62,1)_74%,_rgba(179,170,93,1)_100%)]">
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="absolute inset-0 bg-blue-950/5"></div>
-      <div className=" flex flex-col text-center items-center justify-center w-full h-full pt-8 gap-4">
+      <div className=" flex flex-col text-center items-center justify-center w-full h-full pt-8 gap-4 lg:gap-12">
         <div className="mt-2 border border-[hsl(212,17%,50%)] rounded-full p-1 flex items-center justify-center gap-1.5 pl-2 font-cinzel text-white">
           <BsStars className="text-amber-300 " />
-          <span className="text-[8px] md:text-sm ">
+          <span className="text-[8px] md:text-sm lg:text-xl">
             League of Legends Champion Directory
           </span>
         </div>
-        <div className="text-center text-4xl sm:text-5xl font-bold">
+        <div className="text-center text-4xl sm:text-5xl lg:text-9xl font-bold">
           <span className="text-amber-300 ">Choose Your</span>
           <br />
           <span className="text-white">Champion</span>
         </div>
-        <div className=" flex items-center justify-center text-center flex-col max-w-4xl gap-8 px-2">
-          <p className="flex flex-wrap text-white text-[8px] sm:text-xs md:text-xl">
+        <div className=" flex items-center justify-center text-center flex-col max-w-4xl gap-8 px-2 lg:gap-12">
+          <p className="flex flex-wrap text-white text-[8px] sm:text-xs md:text-xl lg:text-2xl">
             Discover the perfect champion for your playstyle. Explore detailed
             abilities, stats, and lore from the world of Runeterra.
           </p>
-
-          <div className="pb-28 text-xs md:text-xl flex gap-3 items-center justify-center text-white px-3 mb-6">
+          <div className="pb-28 text-xs md:text-xl flex gap-3 items-center justify-center text-white px-3 mb-6 lg:text-2xl">
             <div className="flex gap-1  items-center justify-center ">
               <span>
                 <LuSword className="text-amber-300 " />
