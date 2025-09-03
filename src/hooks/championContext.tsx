@@ -1,7 +1,7 @@
 import { createContext, useContext, type ReactNode } from "react";
 import { FetchChampions } from "../hooks/useChampions";
 
-type Champion = {
+export type Champion = {
   id: string;
   name: string;
   title: string;
