@@ -1,4 +1,4 @@
-import type { Champion } from "../hooks/championContext";
+import type { Champion } from "./Champion";
 
 export type ChampionsResponse = {
   type: string;
