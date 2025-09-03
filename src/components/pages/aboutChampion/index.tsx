@@ -9,12 +9,13 @@ import { CiHeart } from "react-icons/ci";
 import { CiStar } from "react-icons/ci";
 import { GiLampreyMouth } from "react-icons/gi";
 export default function AboutChampion() {
+  const { champions, isLoading } = useChampionsContext();
   const { id } = useParams();
-  const { champions } = useChampionsContext();
 
-  if (!champions) return <p>Carregando...</p>;
+  if (!id) return <p>ID do campeão não fornecido</p>;
+  if (isLoading) return <p>Carregando campeões...</p>;
 
-  const champion = champions[id!];
+  const champion = champions.find((c) => c.id === id);
   if (!champion) return <p>Campeão não encontrado</p>;
 
   return (

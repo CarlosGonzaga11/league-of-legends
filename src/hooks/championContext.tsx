@@ -1,40 +1,11 @@
 import { createContext, useContext, type ReactNode } from "react";
-import { FetchChampions } from "../hooks/useChampions";
-
-export type Champion = {
-  id: string;
-  name: string;
-  title: string;
-  info: { attack: number; defense: number; magic: number; difficulty: number };
-  tags: string[];
-  image: string;
-  blurb: string;
-  stats: {
-    hp: number;
-    hpperlevel: number;
-    mp: number;
-    mpperlevel: number;
-    movespeed: number;
-    armor: number;
-    armorperlevel: number;
-    spellblock: number;
-    spellblockperlevel: number;
-    attackrange: number;
-    hpregen: number;
-    hpregenperlevel: number;
-    mpregen: number;
-    mpregenperlevel: number;
-    crit: number;
-    critperlevel: number;
-    attackdamage: number;
-    attackdamageperlevel: number;
-    attackspeed: number;
-    attackspeedperlevel: number;
-  };
-};
+import { useQuery } from "@tanstack/react-query";
+import { getChampions } from "../api/api";
+import type { Champion } from "../type/Champion";
 
 type ChampionsContextType = {
-  champions: Record<string, Champion> | null;
+  champions: Champion[];
+  isLoading: boolean;
 };
 
 const ChampionsContext = createContext<ChampionsContextType | undefined>(
@@ -42,12 +13,15 @@ const ChampionsContext = createContext<ChampionsContextType | undefined>(
 );
 
 export const ChampionsProvider = ({ children }: { children: ReactNode }) => {
-  const { data: champions } = FetchChampions();
+  const { data, isLoading } = useQuery({
+    queryKey: ["champions"],
+    queryFn: getChampions,
+  });
 
-  const formattedChampions = champions ? champions.data : null;
+  const champions: Champion[] = data ? Object.values(data) : [];
 
   return (
-    <ChampionsContext.Provider value={{ champions: formattedChampions }}>
+    <ChampionsContext.Provider value={{ champions, isLoading }}>
       {children}
     </ChampionsContext.Provider>
   );
