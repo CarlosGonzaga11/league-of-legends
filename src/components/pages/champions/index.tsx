@@ -20,7 +20,7 @@ export default function Champions() {
   }
 
   const champsArray: Champion[] = champions
-    ? Object.values(champions.data as Record<string, Champion>)
+    ? Object.values(champions as unknown as Record<string, Champion>)
     : [];
 
   const searchArray = search
