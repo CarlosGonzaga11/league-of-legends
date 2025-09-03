@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { FetchChampions } from "../../../hooks/useChampions";
 import CardChampion from "../../card";
-
 import { CiFilter } from "react-icons/ci";
+import type { Champion } from "../../../type/Champion";
 
 export default function Champions() {
   const roles = ["Assassin", "Fighter", "Mage", "Marksman", "Support"];
@@ -19,7 +19,9 @@ export default function Champions() {
     setFilterIsOpen(!filterIsOpen);
   }
 
-  const champsArray = champions ? Object.values(champions.data) : [];
+  const champsArray: Champion[] = champions
+    ? Object.values(champions as unknown as Record<string, Champion>)
+    : [];
   const searchArray = search
     ? champsArray.filter((champ) =>
         champ.name.toUpperCase().includes(search.toUpperCase())
