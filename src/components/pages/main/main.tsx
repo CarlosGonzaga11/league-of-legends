@@ -8,8 +8,8 @@ export default function Main() {
     <div className="font-serif relative min-h-screen bg-[linear-gradient(135deg,_rgba(13,34,41,1)_12%,_rgba(105,104,62,1)_74%,_rgba(179,170,93,1)_100%)]">
       <div className="absolute inset-0 bg-black/20"></div>
       <div className="absolute inset-0 bg-blue-950/5"></div>
-      <div className="flex flex-col text-center items-center justify-center w-full h-full pt-8 gap-4">
-        <div className="border border-[hsl(212,17%,50%)] rounded-full p-1 flex items-center justify-center gap-1.5 pl-2 font-cinzel text-white">
+      <div className=" flex flex-col text-center items-center justify-center w-full h-full pt-8 gap-4">
+        <div className="mt-2 border border-[hsl(212,17%,50%)] rounded-full p-1 flex items-center justify-center gap-1.5 pl-2 font-cinzel text-white">
           <BsStars className="text-amber-300 " />
           <span className="text-[8px] md:text-sm ">
             League of Legends Champion Directory
@@ -26,7 +26,7 @@ export default function Main() {
             abilities, stats, and lore from the world of Runeterra.
           </p>
 
-          <div className="text-xs md:text-xl flex gap-3 items-center justify-center text-white px-3 mb-6">
+          <div className="pb-28 text-xs md:text-xl flex gap-3 items-center justify-center text-white px-3 mb-6">
             <div className="flex gap-1  items-center justify-center ">
               <span>
                 <LuSword className="text-amber-300 " />
