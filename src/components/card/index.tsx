@@ -30,7 +30,7 @@ export default function CardChampion({
   return (
     <div
       onClick={handleClick}
-      className=" relative group border  border-[hsl(210_15%_20%))] rounded-xl max-w-24 sm:max-w-xs w-full hover:border-amber-300 hover:scale-[1.01] "
+      className=" relative group border  border-[hsl(210_15%_20%))] rounded-xl min-w-24 sm:max-w-xs w-full hover:border-amber-300 hover:scale-[1.01] "
     >
       <div className="absolute left-0.5 top-1 w-fit p-1 text-[8px]  gap-1 flex flex-wrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-100">
         {tag?.map((t) => (

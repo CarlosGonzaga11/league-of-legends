@@ -64,10 +64,10 @@ export default function Champions() {
           <div className="border border-[hsl(210_15%_20%))] rounded-xl flex flex-col p-3 gap-3 transition-all duration-300">
             <div>Champion Roles</div>
 
-            <div className="flex flex-wrap flex-row gap-2 text-[8px] ld:text-sm">
+            <div className="flex flex-wrap flex-row gap-2 text-sm">
               {roles.map((role) => (
                 <span
-                  className={`border rounded-full px-1  hover:border-amber-200 cursor-pointer transition-all duration-300 ${
+                  className={`border rounded-full px-2  hover:border-amber-200 cursor-pointer transition-all duration-300 ${
                     roleSelected === role
                       ? "bg-amber-300 text-black  border-[hsl(210_15%_20%))] "
                       : "bg-black"
@@ -89,10 +89,10 @@ export default function Champions() {
         )}
       </div>
 
-      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(100px,1fr))]">
-        {(search === "" && roleSelected !== " "
-          ? filteredChampions
-          : searchArray
+      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
+        {(search === "" && roleSelected !== ""
+          ? searchArray
+          : filteredChampions
         ).map((champion: any) => (
           <CardChampion
             key={champion.id}
