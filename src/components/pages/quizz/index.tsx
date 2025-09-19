@@ -42,7 +42,7 @@ export default function Quizz() {
           </div>
         </div>
         <div className=" max-w-5xl  items-center p-2  flex  gap-9 flex-col bg-[#1c1f22] py-2 rounded-2xl">
-          <div className="max-w-3xl sm:min-w-4xl flex flex-col gap-10 ">
+          <div className="max-w-3xl sm:min-w-4xl flex flex-col gap-6 ">
             <div className="flex justify-between items-start pl-4">
               <div className="text-white">
                 {isClicked
