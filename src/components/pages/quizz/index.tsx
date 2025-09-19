@@ -24,7 +24,7 @@ export default function Quizz() {
   }
   return (
     <div className="flex flex-col border h-screen">
-      <section className="relative h-screen pb-12 px-4 flex items-center justify-center bg-[#0f1114] flex-col gap-12">
+      <section className="relative h-screen pb-12 px-4 flex items-center justify-center bg-[#0f1114] flex-col gap-6">
         <div>
           <div className="flex flex-col gap-2.5">
             <div className="pt-2 text-white text-center text-3xl flex justify-center hover:text-amber-200">
