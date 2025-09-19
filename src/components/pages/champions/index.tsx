@@ -89,10 +89,10 @@ export default function Champions() {
         )}
       </div>
 
-      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
+      <div className="grid gap-4 grid-cols-[repeat(auto-fit,minmax(200px,1fr))] transition-all duration-300">
         {(search === "" && roleSelected !== ""
-          ? searchArray
-          : filteredChampions
+          ? filteredChampions
+          : searchArray
         ).map((champion: any) => (
           <CardChampion
             key={champion.id}
