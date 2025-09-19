@@ -2,6 +2,7 @@ import { LuSword } from "react-icons/lu";
 import { MdOutlineShield } from "react-icons/md";
 import { BsStars } from "react-icons/bs";
 import Champions from "../champions";
+import { Link } from "react-router-dom";
 
 export default function Main() {
   return (
@@ -44,6 +45,12 @@ export default function Main() {
               </span>
               <p>Endless Possibilities</p>
             </div>
+            <Link
+              to="/quizz"
+              className="block text-white text-2xl rounded-2xl p-3 border border-amber-300 cursor-pointer z-99 animate-bounce"
+            >
+              Teste seu conhecimento
+            </Link>
           </div>
         </div>
       </div>

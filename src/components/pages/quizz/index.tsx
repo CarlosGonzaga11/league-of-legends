@@ -1,6 +1,9 @@
+import { FaRegArrowAltCircleLeft } from "react-icons/fa";
+
 import { useQuizzContext } from "../../../hooks/useQuizzContext";
 import { questions } from "../../../questions";
 import QuizzCard from "../../quizzCard";
+import { Link } from "react-router-dom";
 export default function Quizz() {
   const {
     count,
@@ -21,15 +24,22 @@ export default function Quizz() {
   }
   return (
     <div className="flex flex-col border h-screen">
-      <section className="min-h-screen pb-12 px-4 flex items-center justify-center bg-[#0f1114] flex-col gap-12">
-        <div className="flex flex-col gap-2.5">
-          <p className="text-center text-3xl  text-amber-300 font-bold mt-19">
-            League of Quizz
-            <br></br>
-          </p>
-          <span className="text-center text-xl font-normal text-white">
-            Teste seus conhecimentos sobre os itens do lolzinho
-          </span>
+      <section className="relative h-screen pb-12 px-4 flex items-center justify-center bg-[#0f1114] flex-col gap-12">
+        <div>
+          <div className="flex flex-col gap-2.5">
+            <div className="text-white text-center text-3xl flex justify-center hover:text-amber-200">
+              <Link to="/">
+                <FaRegArrowAltCircleLeft />
+              </Link>
+            </div>
+            <p className=" text-center text-3xl   text-amber-300 font-bold ">
+              League of Quizz
+              <br></br>
+            </p>
+            <span className="text-center text-xl font-normal text-white">
+              Teste seus conhecimentos sobre os itens do lolzinho
+            </span>
+          </div>
         </div>
         <div className=" max-w-5xl  items-center p-2  flex  gap-9 flex-col bg-[#1c1f22] py-2 rounded-2xl">
           <div className="max-w-3xl sm:min-w-4xl flex flex-col gap-10 ">
